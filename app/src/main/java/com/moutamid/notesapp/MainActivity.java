@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         UpdateRecycler(notesList);
 
-        builder = new AlertDialog.Builder(this, R.style.Theme_NotesApp_AlertDialogLogout);
+        builder = new AlertDialog.Builder(this);
         builder.setTitle("Log out");
         builder.setMessage("Are you sure you Delete this Note?");
         builder.setCancelable(false);
