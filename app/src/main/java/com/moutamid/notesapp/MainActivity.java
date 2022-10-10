@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         UpdateRecycler(notesList);
 
         builder = new AlertDialog.Builder(this);
-        builder.setTitle("Log out");
-        builder.setMessage("Are you sure you Delete this Note?");
+        builder.setTitle("Delete Note");
+        builder.setMessage("Are you sure you want to Delete this Note?");
         builder.setCancelable(false);
         builder.setPositiveButton("Yes", (dialogInterface, i) -> {
             database.mainDAO().Delete(selectedNote);
