@@ -9,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -147,5 +150,19 @@ public class MainActivity extends AppCompatActivity {
     private void showPopUp() {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.privacy_menu, menu);
+        MenuItem menuShare = menu.findItem(R.id.action_privacy);
+
+        menuShare.setOnMenuItemClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/e/2PACX-1vSiVOyF-G9UAO1U1DfthqeF1bG6mCxH5d39W1s8NNQw-p-ctSOSgq4Vhu684RqnDVZBIl9iIoDTVNvf/pub"));
+            startActivity(browserIntent);
+            return false;
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }
