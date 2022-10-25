@@ -50,9 +50,10 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="80dp"
-        android:text="Donate"
+        android:text="Notes"
         android:gravity="center"
         android:textColor="@color/white"
         app:backgroundTint="@color/orange" />
+
 
 </RelativeLayout>
