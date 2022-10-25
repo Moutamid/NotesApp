@@ -24,15 +24,35 @@
         android:layout_below="@id/search_view"
         android:layout_margin="8dp"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Add Note"
+        android:textColor="@color/white"
+        android:layout_marginBottom="25dp"
+        app:icon="@drawable/ic_add"
         app:backgroundTint="@color/orange"
-        app:tint="@color/white"
-        android:src="@drawable/ic_add" />
+        app:iconTint="@color/white"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fab_add"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="80dp"
+        android:text="Donate"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/orange" />
 
 </RelativeLayout>

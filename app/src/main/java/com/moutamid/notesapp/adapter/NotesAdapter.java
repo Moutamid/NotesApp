@@ -43,16 +43,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.notes.setText(notes.getNotes());
         holder.date.setText(notes.getDate());
 
-        holder.delete.setOnClickListener(v -> {
-            clickListner.onClickDelete(list.get(holder.getAdapterPosition()));
-        });
+        holder.delete.setOnClickListener(v -> clickListner.onClickDelete(list.get(holder.getAdapterPosition())));
 
-        holder.notes_container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickListner.onClick(list.get(holder.getAdapterPosition()));
-            }
-        });
+        holder.notes_container.setOnClickListener(view -> clickListner.onClick(list.get(holder.getAdapterPosition())));
 
     }
 

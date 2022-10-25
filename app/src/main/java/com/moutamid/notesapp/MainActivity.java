@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.moutamid.notesapp.adapter.NotesAdapter;
 import com.moutamid.notesapp.database.RoomDB;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     List<NotesModel> notesList;
     NotesAdapter adapter;
     RoomDB database;
-    FloatingActionButton fab;
+    ExtendedFloatingActionButton fab, fab_donate;
     SearchView searchView;
     NotesModel selectedNote;
     AlertDialog.Builder builder;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         fab = findViewById(R.id.fab_add);
+        fab_donate = findViewById(R.id.fab_donate);
         searchView = findViewById(R.id.search_view);
 
         notesList = new ArrayList<>();
@@ -69,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(MainActivity.this, AddNoteActivity.class);
             startActivityForResult(i, 1);
         });
+        fab_donate.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, DonateActivity.class);
+            startActivityForResult(i, 1);
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -82,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 
     private void filter(String newText) {
